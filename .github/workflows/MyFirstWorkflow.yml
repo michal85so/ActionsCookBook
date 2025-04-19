@@ -12,3 +12,6 @@ jobs:
       - name: pozdrów użytkownika
       - run: echo "Hello world from ${{ github.actor }}"
       - shell: bash
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - run: tree
