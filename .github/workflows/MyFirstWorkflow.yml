@@ -10,8 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pozdrów użytkownika
-        run: echo "Hello world from ${{ github.actor }}"
+        run: echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}"
         shell: bash
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - run: tree
+  Test:
+    runs-on: ubuntu-latest
+    environment: Test
+    needs: [first_job]
+  Test-load:
+    runs-on: ubuntu-latest
+    environment: Test-load
+    needs: [first_job]
+  Porduction:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Production
+      url: https:writeabout.net
+    needs: [Test,Test-load]
