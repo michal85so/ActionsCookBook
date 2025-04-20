@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Test-load
     needs: [first_job]
-  Porduction:
+  Production:
     runs-on: ubuntu-latest
     environment: 
       name: Production
