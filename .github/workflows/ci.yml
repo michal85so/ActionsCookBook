@@ -1,0 +1,11 @@
+name: 'Akcja CI'
+on: [push]
+jobs:
+  ci:
+    runs-on: ubuntu:latest
+    steps:
+      - uses: actions/chackout@v4.1.1
+      - name: 'uruchom moja wlasna akcje kontenera'
+        uses: ./
+        with:
+          who-to-greet: "@wulfland"
