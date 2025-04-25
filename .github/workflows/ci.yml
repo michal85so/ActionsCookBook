@@ -6,9 +6,9 @@ on:
   workflow_dispatch:  
 jobs:
   ci:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/chackout@v4.1.1
+      - uses: actions/checkout@v4.2.2
       - name: 'uruchom moja wlasna akcje kontenera'
         id: my-action
         uses: ./
