@@ -3,7 +3,7 @@ name: My second workflow
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch: 
 jobs:
   my_second_job:
