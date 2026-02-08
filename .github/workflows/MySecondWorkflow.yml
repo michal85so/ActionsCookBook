@@ -1,0 +1,18 @@
+# some workflow
+name: My second workflow
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: 
+jobs:
+  my_second_job:
+    name: second workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: podrow
+        run: echo "witaj ${{github.actor}}"
+        shell: bash
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+      - run: tree
